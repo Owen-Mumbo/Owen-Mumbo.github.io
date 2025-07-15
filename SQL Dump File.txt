@@ -1,0 +1,29 @@
+-- Create the database
+CREATE DATABASE task_management_system;
+
+-- Use the database
+USE task_management_system;
+
+-- Create users table
+CREATE TABLE users (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Role ENUM('admin','user') DEFAULT 'user'
+);
+
+-- Create tasks table
+CREATE TABLE tasks (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(100) NOT NULL,
+    Description TEXT,
+    Assigned_to INT,
+    Created_by INT,
+    Deadline DATE,
+    Status ENUM('Pending','In Progress','Complete') DEFAULT 'Pending',
+    Created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Assigned_to) REFERENCES users(id),
+    FOREIGN KEY (Created_by) REFERENCES users(id)
+);
+
