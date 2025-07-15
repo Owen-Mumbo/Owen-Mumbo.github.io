@@ -1,0 +1,34 @@
+.task-card {
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .task-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .status-badge {
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-in-progress {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        .status-complete {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .deadline-urgent {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .deadline-near {
+            color: #fd7e14;
+        }
+        .deadline-normal {
+            color: #28a745;
+        }
